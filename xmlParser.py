@@ -85,12 +85,26 @@ def main():
 				
 				attack = attack.replace(" ", "")
 				print attack
-				attack = re.split(r'[|d+]',attack)
+				
+				attack = attack.split('|')
+				atkNumOfDice = attack[2].split('d')
+				atkSizeOfDice = atkNumOfDice[1].split('+')
+
 				atkName = attack[0]
-				atkAvgDmg = int(attack[1])
-				atkNumOfDice = int(attack[2])
-				atkSizeOfDice = int(attack[3])
-				atkModifier = int(attack[4])
+
+
+				if attack[1] is '':
+					atkAvgDmg = None
+				else:
+					atkAvgDmg = int (attack[1])
+
+				if len(atkSizeOfDice) is 1:
+					atkModifier = 0
+				else:
+					atkModifier = int(atkSizeOfDice[1])
+				atkSizeOfDice = int(atkSizeOfDice[0])
+				atkNumOfDice = int(atkNumOfDice[0])
+				
 				insert_attacks(atkName, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
 				
 				
