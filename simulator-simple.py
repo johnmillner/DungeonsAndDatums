@@ -75,6 +75,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		victor = "team 1"
 	else:
 		victor = "team 2"
+	
 	print "Victor is ", victor.name," and completed in ", counter, " turns!"
 	
 	
