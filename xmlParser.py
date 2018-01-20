@@ -82,7 +82,7 @@ def main():
 		for action in monster.findall('action'):
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
-				
+				print attack
 				negative = False
 				attack = attack.split('|')
 				atkNumOfDice = attack[2].split('d')
