@@ -44,7 +44,7 @@ def insert_monster_attacks(name, attack):
 def main():
 	insert_monster('Aboleth', 135, 17)
 	
-	tree = ET.parse('../DnDAppFiles/Bestiary/Monster_Manual_Bestiary.xml')
+	tree = ET.parse('../DnDAppFiles/Bestiary/Monster Manual Bestiary.xml')
 	root = tree.getroot()
 
 	for monster in root.findall('monster'):
