@@ -56,7 +56,7 @@ def simulate_manyMonsters ( team1, team2 ):
 			defense = team1
 					
 		#pick random guy on defense to take the hit
-		catcherIndex = random.randint( 0, len( defense ) )
+		catcherIndex = random.randint( 0, len( defense ) - 1 )
 		catcher = defense[ catcherIndex ]
 		
 		print attacker.name, " on team ", attacker.team, "is fighting ", catcher.name, " of team", catcher.team, "!"
@@ -78,7 +78,7 @@ def simulate_manyMonsters ( team1, team2 ):
 			
 		counter = counter + 1 
 		
-	if ( len( team1 ) > 0 ):
+	if len( team1 ) > 0 :
 		victor = "team 1"
 	else:
 		victor = "team 2"
