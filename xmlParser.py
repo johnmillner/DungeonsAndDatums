@@ -4,6 +4,7 @@ import mysql.connector
 def insert_monster(name, hp, ac):
 	
 	query = "INSERT INTO monsters(name, hp, ac) VALUES(%s,%d,%d);" % (name, ac, hp)
+	
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 	
 	cursor = conn.cursor()
@@ -40,7 +41,7 @@ def insert_monster_attacks(name, attack):
 		conn.close()
 		
 def main():
-	insert_monster("Aboleth", 135, 17)
+	insert_monster('Aboleth', 135, 17)
 	'''
 	tree = ET.parse('../DnDAppFiles/Bestiary/Monster_Manual_Bestiary.xml')
 	root = tree.getroot()
