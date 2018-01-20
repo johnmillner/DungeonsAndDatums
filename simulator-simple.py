@@ -1,8 +1,10 @@
 import random
 import operator
+import mysql.connector 
+import MySQLdb
 
 class Monster:
-	def __init__ ( self, name, hp, ac, attacks, items ):
+	def __init__ ( self, name, hp, ac, attacks ):
 		self.name 		= name
 		self.hp 		= hp
 		self.ac 		= ac
@@ -16,12 +18,12 @@ class Monster:
 				self.maxAttack = attack.avg
 		
 class Attack:
-	def __init__ ( self, name, noDice, sizeDice, modifier, avg )
-		self.name 		= name
-		self.noDice 	= noDice
-		self.sizeDice 	= sizeDice
-		self.modifier 	= modifier
-		self.avg 		= avg
+	def __init__ ( self, rawAttack )
+		self.name 		= rawAttack[0]
+		self.noDice 	= rawAttack[1]
+		self.sizeDice 	= rawAttack[2]
+		self.modifier 	= rawAttack[3]
+		self.avg 		= rawAttack[4]
 						
 def simlulate_1v1( monsters ) :
 	counter = 0
@@ -70,7 +72,7 @@ def simulate_manyMonsters ( team1, team2 ):
 			defense = team1
 			
 		#pick random guy on defense to take the hit
-		catcher = random.randin( 0, len( defense - 1) )
+		catcher = random.randin( 0, len( defense ) - 1 )
 		
 		#determine hit chance
 		hit = random.randint( 1, 20 )			
@@ -85,7 +87,7 @@ def simulate_manyMonsters ( team1, team2 ):
 			
 		counter = counter + 1 
 		
-	if ( lean( team1 ) > 0 ):
+	if ( len( team1 ) > 0 ):
 		victor = "team 1"
 	else:
 		victor = "team 2"
@@ -93,7 +95,92 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main:
+	raw1 = sys.argv[1]
+	raw2 = sys.argv[2]
 	
+	#connect to database - yes i know how insecure this is - dont judge :'(
+	conn = mysql.connector.connect(host='localhost',database='dungeonsAndData',user='root',password='Littlefoot')
+	cursor = conn.cursor()
+	
+	team1 = list()
+	team2 = list()
+	
+	#find the monsters
+	for monster in raw1:
+		# find the monster AC and HP in monsters
+		# find the monsters attacks in monster_attacks
+		# find the attack properties in attacks
+		#	piece together a list of valid list of attacks
+		# piece together a valid moster
+		# add monster to list	
+		
+		# generate string for mySQL
+		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
+		# grab the monsters file	
+		cursor.execute( MySQLdb.escape_string(tmp) )
+		# go fetch it - now we have HP & AC									
+		profile = cursor.fetchone()		
+		
+		# generate string for mySQL to find attacks									
+		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
+		# find the attack files
+		cursor.execute( MySQLdb.escape_string(tmp) )
+		# go fetch ALL of them
+		rawAttacks = cursor.fetchall()
+		
+		# create list for attacks to fall into
+		attacks = list()
+		for attack in rawAttacks:
+			# generate string for mySQL to derive attacks
+			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack +"'"	
+			# grab the attack file	
+			cursor.execute( MySQLdb.escape_string(tmp) )
+			# go fetch it - now we have the full attack profile								
+			profile = cursor.fetchone()	
+			attacks.append( Attack( attack) ) 
+		team1.append( Monster( profile[0], profile[1], profile[2], attacks) )
+		
+	#find the monsters
+	for monster in raw2:
+		# find the monster AC and HP in monsters
+		# find the monsters attacks in monster_attacks
+		# find the attack properties in attacks
+		#	piece together a list of valid list of attacks
+		# piece together a valid moster
+		# add monster to list	
+		
+		# generate string for mySQL
+		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
+		# grab the monsters file	
+		cursor.execute( MySQLdb.escape_string(tmp) )
+		# go fetch it - now we have HP & AC									
+		profile = cursor.fetchone()		
+		
+		# generate string for mySQL to find attacks									
+		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
+		# find the attack files
+		cursor.execute( MySQLdb.escape_string(tmp) )
+		# go fetch ALL of them
+		rawAttacks = cursor.fetchall()
+		
+		# create list for attacks to fall into
+		attacks = list()
+		for attack in rawAttacks:
+			# generate string for mySQL to derive attacks
+			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack +"'"	
+			# grab the attack file	
+			cursor.execute( MySQLdb.escape_string(tmp) )
+			# go fetch it - now we have the full attack profile								
+			profile = cursor.fetchone()	
+			attacks.append( Attack( attack) ) 
+		team2.append( Monster( profile[0], profile[1], profile[2], attacks) )
+		
+		
+	
+	simulate_manyMonsters( team1, team2 )
+		
+	
+			
 	
 if __name__ == "__main__": 
 	main()
