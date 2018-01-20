@@ -73,6 +73,7 @@ def simulate_manyMonsters ( team1, team2 ):
 				
 		#determine if catcher died
 		if catcher.hp <= 0:
+			print catcher.name, "\tdied!"
 			defense.remove( catcher )
 			
 		counter = counter + 1 
