@@ -80,8 +80,9 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw1 = sys.argv[1]
-	raw2 = sys.argv[2]
+	raw1 = ['Aarakocra']
+	raw2 = ['Aboleth']
+
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
 	conn = mysql.connector.connect(host='localhost',database='dungeonsAndData',user='root',password='Littlefoot')
