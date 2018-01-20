@@ -77,7 +77,7 @@ def main():
 		
 		
 		
-		insert_monster(name, hp, ac)
+		#insert_monster(name, hp, ac)
 		
 		for action in monster.findall('action'):
 			if action.find('attack') is not None:
@@ -88,6 +88,7 @@ def main():
 				atkNumOfDice = int(attack[2])
 				atkSizeOfDice = int(attack[3])
 				atkModifier = int(attack[4])
+				insert_attack(name, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
 				
 				
 	
