@@ -29,6 +29,7 @@ def insert_monster_attacks(name, attack):
 	cursor.execute("use dungeonsAndData;")
 	cursor.execute("SELECT * from attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(attack)))
 	fore = cursor.fetchall()
+	print "fore"
 	print fore
 	if len(fore) is 0 :
 		cursor.execute(query)
