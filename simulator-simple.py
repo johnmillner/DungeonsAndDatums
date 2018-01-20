@@ -87,7 +87,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra']
+	raw2 = ['Aarakocra', 'Aarakocra']
 	raw1 = ['Aarakocra', 'Aarakocra']
 
 	
