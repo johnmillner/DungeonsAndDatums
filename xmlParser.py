@@ -57,7 +57,7 @@ def main():
 				attack = action.find('attack').text
 	'''
 
-if __name == '__main__':
+if __name__ == '__main__':
 	main()
 	
 
