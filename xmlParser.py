@@ -20,7 +20,7 @@ def insert_monster(name, hp, ac):
 		
 		
 def insert_monster_attacks(name, attack):
-	query = "INSERT INTO monseter_attacks(,) " \
+	query = "INSERT INTO monster_attacks(,) " \
             "VALUES(%s,%d, %d)"
 	args = (name, ac, hp)
 	
@@ -83,6 +83,11 @@ def main():
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
 				attack = re.split(r'[|d+]',attack)
+				atkName = attack[0]
+				atkAvgDmg = int(attack[1])
+				atkNumOfDice = int(attack[2])
+				atkSizeOfDice = int(attack[3])
+				atkModifier = int(attack[4])
 				
 				
 	
