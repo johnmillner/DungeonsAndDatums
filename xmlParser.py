@@ -1,16 +1,16 @@
 import xml.etree.ElementTree as ET
 import mysql.connector 
-
+import mySQLdb
 def insert_monster(name, hp, ac):
-	
+	name.
 	#print name, ac, hp
-	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d)"
+	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d);" % (MySQLdb.escape_string(name), ac, hp)
 	
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 	
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute(query, (name, ac, hp))
+	cursor.execute(query)
 	conn.commit()
 	
 	print "added ", name, " to database"
