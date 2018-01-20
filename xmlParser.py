@@ -22,7 +22,8 @@ def insert_monster(name, hp, ac):
 	conn.close()
 		
 def insert_monster_attacks(name, attack):
-	query = "INSERT INTO monster_attacks() VALUES('%s','%s');" % (MySQLdb.escape_string(name), MySQLdb.escape_string(attack))
+	tmp = name + attack
+	query = "INSERT INTO monster_attacks() VALUES('%s','%s','%s' );" % (MySQLdb.escape_string(name), MySQLdb.escape_string(attack), MySQLdb.escape_string(tmp))
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 
 	cursor = conn.cursor()
