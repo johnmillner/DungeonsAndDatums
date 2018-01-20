@@ -82,6 +82,8 @@ def main():
 		for action in monster.findall('action'):
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
+				if attack.count('|') > 2:
+					attack.replace("|", "", 1)
 				attack = re.split(r'[|d+]',attack)
 				atkName = attack[0]
 				atkAvgDmg = int(attack[1])
