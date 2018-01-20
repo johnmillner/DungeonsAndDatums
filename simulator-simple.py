@@ -62,7 +62,8 @@ def simulate_manyMonsters ( team1, team2 ):
 		catcher = random.randint( 0, len( defense ) - 1 )
 	
 		#determine hit chance
-		hit = random.randint( 1, 20 )			
+		hit = random.randint( 1, 20 )	
+		print hit		
 		
 		#see if it actually hit
 		if hit > defense[ catcher ].ac:
