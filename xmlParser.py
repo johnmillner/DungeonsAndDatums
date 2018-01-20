@@ -84,6 +84,7 @@ def main():
 				attack = action.find('attack').text
 				if attack.count('|') > 2:
 					attack.replace("|", "", 1)
+				print attack
 				attack = re.split(r'[|d+]',attack)
 				atkName = attack[0]
 				atkAvgDmg = int(attack[1])
