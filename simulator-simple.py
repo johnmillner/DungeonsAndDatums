@@ -56,7 +56,7 @@ def simulate_manyMonsters ( team1, team2 ):
 			defense = team1
 			
 		#pick random guy on defense to take the hit
-		catcher = random.randin( 0, len( defense ) - 1 )
+		catcher = random.randint( 0, len( defense ) - 1 )
 		
 		#determine hit chance
 		hit = random.randint( 1, 20 )			
