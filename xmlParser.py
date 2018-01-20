@@ -10,8 +10,8 @@ def connect():
 									   user = 'root',
 									   password = 'Littlefoot')
 		if conn.is_connected():
-		print('Connected to dungeonsAndData')
-	except error as e:
+			print('Connected to dungeonsAndData')
+	except Error as e:
 		print(e)
 	finally:
 		conn.close()
