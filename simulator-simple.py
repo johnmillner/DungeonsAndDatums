@@ -38,6 +38,9 @@ def simulate_manyMonsters ( team1, team2 ):
 	for monster in team2:
 		monster.team = 2
 		
+	print team1[0].team
+	print team2[0].team
+		
 	#assign initiative for each member
 	for monster in team1 + team2:
 		monster.initiative = random.random()
@@ -49,8 +52,6 @@ def simulate_manyMonsters ( team1, team2 ):
 		#this guy attacks a random guy on the other team
 		attacker = order[ counter % ( len( team1 ) + len( team2 )) ]
 		print "its ", attacker.name, "'s turn!"
-		
-
 		
 		#determine which team the attacker and defender are on
 		if attacker.team is 1:
@@ -66,7 +67,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		print hit		
 		
 		#see if it actually hit
-		if hit > defense[ catcher ].ac:
+		if hit >= defense[ catcher ].ac:
 			defense[ catcher ].hp = defense[ catcher].hp - attacker.maxAttack
 			print "OH SHIT HE GOT HIT and now only has ", defense[ catcher ].hp, " hp"	
 		else:
