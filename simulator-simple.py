@@ -62,7 +62,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		print attacker.name, " is fighting ", catcher.name, "!"
 		#determine hit chance
 		hit = random.randint( 1, 20 )	
-		print "\t he rolls a ", hit, " against an ac of", catcher.ac		
+		print "\the rolls a ", hit, " against an ac of", catcher.ac		
 		
 		#see if it actually hit
 		if hit >= catcher.ac:
@@ -86,8 +86,8 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
-	raw1 = ['Aarakocra', 'Aarakocra', 'Aarakocra']
+	raw1 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
+	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra']
 
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
