@@ -22,18 +22,20 @@ def insert_monster(name, hp, ac):
 	conn.close()
 		
 def insert_monster_attacks(name, attack):
-	query = "INSERT INTO monster_attacks() VALUES('%s','%s');" % (MySQLdb.escape_string(name), MySQLdb.escape_string(attack))
+	tmp = name + attack
+	query = "INSERT INTO monster_attacks() VALUES('%s','%s','%s' );" % (MySQLdb.escape_string(name), MySQLdb.escape_string(attack), MySQLdb.escape_string(tmp))
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute("SELECT * from attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(attack)))
+	cursor.execute("SELECT * from monster_attacks WHERE cherry LIKE '%s'" % (MySQLdb.escape_string(tmp)))
 	fore = cursor.fetchall()
-	print fore
+	#print "fore"
+	#print fore
 	if len(fore) is 0 :
 		cursor.execute(query)
 		conn.commit()
-		print "added ", name, " to database"
+	print "added ", name, " to database"
 		
 	conn.close()
 	
