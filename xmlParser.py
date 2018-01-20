@@ -19,8 +19,6 @@ def insert_monster(name, hp, ac):
 	conn.close()
 		
 		
-def insert_monster_attacks(name, attack):
-
 		
 		
 def insert_attacks(name, numOfDice, sizeOfDice, modifier, avgDmg):
