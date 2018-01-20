@@ -9,7 +9,7 @@ def insert_monster(name, hp, ac):
 	
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute("insert into monsters (name, hp, ac), values ('john', 12, 12);")
+	cursor.execute(query)
 	
 	print "added ", name, " to database"
 	conn.close()
