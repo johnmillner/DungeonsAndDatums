@@ -9,7 +9,7 @@ def connect():
 									   database = 'dungeonsAndData', 
 									   user = 'root',
 									   password = 'Littlefoot')
-	if conn.is_connected():
+		if conn.is_connected():
 		print('Connected to dungeonsAndData')
 	except error as e:
 		print(e)
