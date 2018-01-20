@@ -94,7 +94,7 @@ def main():
 
 
 				if attack[1] is '':
-					atkAvgDmg = None
+					atkAvgDmg = -1
 				else:
 					atkAvgDmg = int (attack[1])
 
