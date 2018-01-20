@@ -48,31 +48,32 @@ def simulate_manyMonsters ( team1, team2 ):
 	while len( team1 ) > 0 and len( team2 ) > 0:
 		#this guy attacks a random guy on the other team
 		attacker = order[ counter % ( len( team1 ) + len( team2 )) ]
-		print "its ", attacker.name, "'s turn!"
 		
 		#determine which team the attacker and defender are on
 		if attacker.team is 1:
 	  		defense = team2
 		else:
 			defense = team1
-			
+					
 		#pick random guy on defense to take the hit
-		catcher = random.randint( 0, len( defense ) - 1 )
-	
+		catcherIndex = random.randint( 0, len( defense ) - 1 )
+		catcher = defense[ catcherIndex ]
+		
+		print attacker.name, " is fighting ", catcher.name, "!"
 		#determine hit chance
 		hit = random.randint( 1, 20 )	
 		print hit		
 		
 		#see if it actually hit
-		if hit >= defense[ catcher ].ac:
-			defense[ catcher ].hp = defense[ catcher].hp - attacker.maxAttack
-			print "OH SHIT HE GOT HIT and now only has ", defense[ catcher ].hp, " hp"	
+		if hit >= catcher.ac:
+			catcher.hp = catcher.hp - attacker.maxAttack
+			print "\the hits with ", atacker.maxAttack, ", ", catcher.name, "'s now at ", catcher.hp, " hp"	
 		else:
-			print "HE MISSED!"	
+			print "\tHE MISSED!"
+				
 		#determine if catcher died
-		theGuy = defense[catcher]
-		if defense[ catcher ].hp <= 0:
-			defense.remove( theGuy )
+		if catcher.hp <= 0:
+			defense.remove( catcher )
 			
 		counter = counter + 1 
 		
