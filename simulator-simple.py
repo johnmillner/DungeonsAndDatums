@@ -66,8 +66,9 @@ def simulate_manyMonsters ( team1, team2 ):
 			defense[ catcher ].hp = defense[ catcher].hp - attacker.maxAttack
 			
 		#determine if catcher died
+		theGuy = defense[catcher]
 		if defense[ catcher ].hp <= 0:
-			defense.remove( catcher )
+			defense.remove( theGuy )
 			
 		counter = counter + 1 
 		
