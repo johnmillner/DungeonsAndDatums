@@ -3,6 +3,7 @@ import mysql.connector
 
 def insert_monster(name, hp, ac):
 	
+	#print name, ac, hp
 	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d);" % (name, ac, hp)
 	
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
@@ -42,7 +43,7 @@ def insert_monster_attacks(name, attack):
 		conn.close()
 		
 def main():
-	insert_monster('Aboleth', 135, 17)
+	#insert_monster('Aboleth', 135, 17)
 	
 	tree = ET.parse('../DnDAppFiles/Bestiary/Monster Manual Bestiary.xml')
 	root = tree.getroot()
@@ -51,6 +52,15 @@ def main():
 		name =  monster.find('name').text
 		ac =  monster.find('ac').text
 		hp =  monster.find('hp').text
+		hp = hp.split(' ')[0]
+		ac = ac.split(' ')[0]
+		
+		
+		hp = int(hp)
+		ac = int(ac)
+		
+		
+		
 		insert_monster(name, hp, ac)
 		
 		for action in monster.findall('action'):
