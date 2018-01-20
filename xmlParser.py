@@ -33,6 +33,8 @@ def insert_monster_attacks(name, attack):
 	if len(fore) is 0 :
 		cursor.execute(query)
 		conn.commit()
+		print "added ", name, " to database"
+		
 	conn.close()
 	
 		
@@ -91,7 +93,7 @@ def main():
 
 				atkName = attack[0]
 				
-				print attack
+				
 				if attack[1] is '':
 					atkAvgDmg = -1
 				else:
