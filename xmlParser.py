@@ -1,34 +1,16 @@
 import xml.etree.ElementTree as ET
 from mysql.connector import MySQLConnection, Error
 
-def connect():
-	""" Conect to MySQL database """
-	
-	try:
-		conn = mysql.connector.connect(host = 'localhsot', 
-									   database = 'dungeonsAndData', 
-									   user = 'root',
-									   password = 'Littlefoot')
-		if conn.is_connected():
-		print('Connected to dungeonsAndData')
-	except error as e:
-		print(e)
-	finally:
-		conn.close()
-
 def insert_monster(name, hp, ac):
 	
-	query = "INSERT INTO monsters(name, hp, ac) " \
-            "VALUES(%s,%d, %d)"
-	args = (name, ac, hp)
+	query = "INSERT INTO monsters(name, hp, ac) VALUES(%s,%d,%d);", name, ac, hp
 	
 	try:
-		conn = mysql.connector.connect(host = 'localhsot', 
-									   database = 'dungeonsAndData', 
-									   user = 'root'
-									   password = 'Littlefoot')
-	if conn.is_connected():
-		print('Connected to dungeonsAndData')
+		conn = mysql.connector.connect(host = 'localhsot', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
+		if conn.is_connected():
+			cursor = conn.cursor()
+			cursor.execute(query)
+			print('Connected to dungeonsAndData')
 	except error as e:
 		print(e)
 	finally:
@@ -61,8 +43,7 @@ def insert_monster_attacks(name, attack):
 		conn.close()
 		
 def main():
-	connect()
-	#insert_monster("Aboleth", 135, 17)
+	insert_monster("Aboleth", 135, 17)
 	'''
 	tree = ET.parse('../DnDAppFiles/Bestiary/Monster_Manual_Bestiary.xml')
 	root = tree.getroot()
