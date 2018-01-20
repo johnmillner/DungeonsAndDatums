@@ -27,7 +27,7 @@ def insert_monster_attacks(name, attack):
 
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute("SELECT * from monster_attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(attack)))
+	cursor.execute("SELECT * from monster_attacks WHERE attack LIKE '%s'" % (MySQLdb.escape_string(attack)))
 	fore = cursor.fetchall()
 	print "fore"
 	print fore
