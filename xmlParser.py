@@ -1,20 +1,18 @@
 import xml.etree.ElementTree as ET
-from mysql.connector import MySQLConnection, Error
+import mysql.connector 
 
 def insert_monster(name, hp, ac):
 	
 	query = "INSERT INTO monsters(name, hp, ac) VALUES(%s,%d,%d);", name, ac, hp
 	
-	try:
-		conn = mysql.connector.connect(host = 'localhsot', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
-		if conn.is_connected():
-			cursor = conn.cursor()
-			cursor.execute(query)
-			print('Connected to dungeonsAndData')
-	except error as e:
-		print(e)
-	finally:
-		conn.close()
+	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
+	
+	cursor = conn.cursor()
+	cursor.execute("use dungeonsAndData;")
+	cursor.execute("insert into monsters (name, hp, ac), values ('john', 12, 12);")
+	
+	print "added ", name, " to database"
+	conn.close()
 		
 		
 def insert_monster_attacks(name, attack):
@@ -59,8 +57,8 @@ def main():
 				attack = action.find('attack').text
 	'''
 
-	if __name == '__main__':
-		main()
+if __name == '__main__':
+	main()
 	
 
-			
+			 	
