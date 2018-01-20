@@ -50,8 +50,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		attacker = order[ counter % ( len( team1 ) + len( team2 )) ]
 		print "its ", attacker.name, "'s turn!"
 		
-		print "The initiative order is: "
-		print order
+
 		
 		#determine which team the attacker and defender are on
 		if attacker.team is 1:
@@ -68,7 +67,9 @@ def simulate_manyMonsters ( team1, team2 ):
 		#see if it actually hit
 		if hit > defense[ catcher ].ac:
 			defense[ catcher ].hp = defense[ catcher].hp - attacker.maxAttack
-			print "OH SHIT HE GOT HIT and now only has ", defense[ catcher ].hp, " hp"		
+			print "OH SHIT HE GOT HIT and now only has ", defense[ catcher ].hp, " hp"	
+		else:
+			print "HE MISSED!"	
 		#determine if catcher died
 		theGuy = defense[catcher]
 		if defense[ catcher ].hp <= 0:
@@ -85,7 +86,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw1 = ['Aarakocra']
+	raw1 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
 	raw2 = ['Aboleth']
 
 	
@@ -106,15 +107,13 @@ def main():
 		
 		# generate string for mySQL
 		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
-		print tmp# SELECT * FROM monsters WHERE name LIKE 'Aarakocra'
+
 		# grab the monsters file	
 		cursor.execute( tmp )
 		# go fetch it - now we have HP & AC									
 		junk = cursor.fetchall()		
 		profile = junk[0]
-		
-		print "profile:"
-		print profile
+
 		# generate string for mySQL to find attacks									
 		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
 		# find the attack files
