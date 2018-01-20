@@ -3,8 +3,7 @@ import mysql.connector
 
 def insert_monster(name, hp, ac):
 	
-	query = "INSERT INTO monsters(name, hp, ac) VALUES(%s,%d,%d);", name, ac, hp
-	
+	#query = "INSERT INTO monsters(name, hp, ac) VALUES(%s,%d,%d);" % (name, ac, hp)
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 	
 	cursor = conn.cursor()
