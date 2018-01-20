@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import random
+import sys
 import operator
 import mysql.connector 
 import MySQLdb
@@ -96,7 +97,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	print "Victor is ", victor.name," and completed in ", counter, " turns!"
 	
 	
-def main:
+def main():
 	raw1 = sys.argv[1]
 	raw2 = sys.argv[2]
 	
@@ -119,14 +120,14 @@ def main:
 		# generate string for mySQL
 		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
 		# grab the monsters file	
-		cursor.execute( MySQLdb.escape_string(tmp) )
+		cursor.execute( tmp )
 		# go fetch it - now we have HP & AC									
 		profile = cursor.fetchone()		
 		
 		# generate string for mySQL to find attacks									
 		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
 		# find the attack files
-		cursor.execute( MySQLdb.escape_string(tmp) )
+		cursor.execute( tmp )
 		# go fetch ALL of them
 		rawAttacks = cursor.fetchall()
 		
@@ -134,48 +135,50 @@ def main:
 		attacks = list()
 		for attack in rawAttacks:
 			# generate string for mySQL to derive attacks
-			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack +"'"	
+			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack[1] +"'"	
 			# grab the attack file	
 			cursor.execute( MySQLdb.escape_string(tmp) )
 			# go fetch it - now we have the full attack profile								
-			profile = cursor.fetchone()	
-			attacks.append( Attack( attack) ) 
-		team1.append( Monster( profile[0], profile[1], profile[2], attacks) )
+			move = cursor.fetchone()	
+			attacks.append( Attack( move ) ) 
+		m = Monster( profile[0], profile[1], profile[2], attacks)
+		team1.append( m )
 		
-	#find the monsters
-	for monster in raw2:
-		# find the monster AC and HP in monsters
-		# find the monsters attacks in monster_attacks
-		# find the attack properties in attacks
-		#	piece together a list of valid list of attacks
-		# piece together a valid moster
-		# add monster to list	
+		#find the monsters
+		for monster in raw2:
+			# find the monster AC and HP in monsters
+			# find the monsters attacks in monster_attacks
+			# find the attack properties in attacks
+			#	piece together a list of valid list of attacks
+			# piece together a valid moster
+			# add monster to list	
 		
-		# generate string for mySQL
-		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
-		# grab the monsters file	
-		cursor.execute( MySQLdb.escape_string(tmp) )
-		# go fetch it - now we have HP & AC									
-		profile = cursor.fetchone()		
+			# generate string for mySQL
+			tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
+			# grab the monsters file	
+			cursor.execute( tmp )
+			# go fetch it - now we have HP & AC									
+			profile = cursor.fetchone()		
 		
-		# generate string for mySQL to find attacks									
-		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
-		# find the attack files
-		cursor.execute( MySQLdb.escape_string(tmp) )
-		# go fetch ALL of them
-		rawAttacks = cursor.fetchall()
+			# generate string for mySQL to find attacks									
+			tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
+			# find the attack files
+			cursor.execute( tmp )
+			# go fetch ALL of them
+			rawAttacks = cursor.fetchall()
 		
-		# create list for attacks to fall into
-		attacks = list()
-		for attack in rawAttacks:
-			# generate string for mySQL to derive attacks
-			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack +"'"	
-			# grab the attack file	
-			cursor.execute( MySQLdb.escape_string(tmp) )
-			# go fetch it - now we have the full attack profile								
-			profile = cursor.fetchone()	
-			attacks.append( Attack( attack) ) 
-		team2.append( Monster( profile[0], profile[1], profile[2], attacks) )
+			# create list for attacks to fall into
+			attacks = list()
+			for attack in rawAttacks:
+				# generate string for mySQL to derive attacks
+				tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack[1] +"'"	
+				# grab the attack file	
+				cursor.execute( MySQLdb.escape_string(tmp) )
+				# go fetch it - now we have the full attack profile								
+				move = cursor.fetchone()	
+				attacks.append( Attack( move ) ) 
+			m = Monster( profile[0], profile[1], profile[2], attacks)
+			team2.append( m )
 		
 		
 	
