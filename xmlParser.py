@@ -18,7 +18,16 @@ def insert_monster(name, hp, ac):
 	print "added ", name, " to database"
 	conn.close()
 		
-		
+def insert_monster_attacks(name, attack):
+	query = "INSERT INTO monster_attacks() VALUES('%s','%s');" % (MySQLdb.escape_string(name), MySQLdb.esscape_string(attack))
+	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
+
+	cursor = conn.cursor()
+	cursor.execute("use dungeonsAndData;")
+	cursor.execute(query)
+	conn.commit()
+	conn.close()
+	
 		
 		
 def insert_attacks(name, numOfDice, sizeOfDice, modifier, avgDmg):
@@ -94,6 +103,7 @@ def main():
 				atkNumOfDice = int(atkNumOfDice[0])
 				
 				insert_attacks(atkName, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
+				insert_monster_attacks(name, atkName)
 				
 				
 	
