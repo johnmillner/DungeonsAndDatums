@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 import mysql.connector 
-import mySQLdb
+import MySQLdb
 import re
 
 def insert_monster(name, hp, ac):
