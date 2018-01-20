@@ -85,8 +85,8 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
-	raw1 = ['Aboleth']
+	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
+	raw1 = ['Aarakocra', 'Aarakocra', 'Aarakocra']
 
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
