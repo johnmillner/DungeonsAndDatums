@@ -20,29 +20,7 @@ def insert_monster(name, hp, ac):
 		
 		
 def insert_monster_attacks(name, attack):
-	query = "INSERT INTO monster_attacks(,) " \
-            "VALUES(%s,%d, %d)"
-	args = (name, ac, hp)
-	
-	try:
-		db_config = read_db_config()
-		conn = MySQLConnection(**db_config)
-		
-		cursor = conn.cursor()
-		cursor.execute(query, args)
-		
-		if cursor.lastrowid:
-			print('last insert id', cursor.lastrowid)
-		else:
-			print('last insert id not found')
-		
-		conn.commit()
-	except Error as error:
-		print(error)
-	
-	finally:
-		cursor.close()
-		conn.close()
+
 		
 		
 def insert_attacks(name, numOfDice, sizeOfDice, modifier, avgDmg):
@@ -53,10 +31,14 @@ def insert_attacks(name, numOfDice, sizeOfDice, modifier, avgDmg):
 	
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute(query)
-	conn.commit()
+	cursor.execute("SELECT * from attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(name)))
 	
-	print "added ", name, " to database"
+	fore = cursor.fetchall()
+	if len(fore) is 0 :
+		cursor.execute(query)
+		conn.commit()
+
+		print "added ", name, " to database"
 	conn.close()
 def main():
 	#insert_monster('Aboleth', 135, 17)
@@ -94,7 +76,7 @@ def main():
 					atkSizeOfDice = atkNumOfDice[1].split('+')
 
 				atkName = attack[0]
-
+				
 				print attack
 				if attack[1] is '':
 					atkAvgDmg = -1
