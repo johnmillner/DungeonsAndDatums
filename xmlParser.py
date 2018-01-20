@@ -43,7 +43,7 @@ def insert_monster_attacks(name, attack):
 		
 def main():
 	insert_monster('Aboleth', 135, 17)
-	'''
+	
 	tree = ET.parse('../DnDAppFiles/Bestiary/Monster_Manual_Bestiary.xml')
 	root = tree.getroot()
 
@@ -56,7 +56,7 @@ def main():
 		for action in monster.findall('action'):
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
-	'''
+	
 
 if __name__ == '__main__':
 	main()
