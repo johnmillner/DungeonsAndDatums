@@ -83,7 +83,7 @@ def main():
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
 				
-				attack.strip()
+				attack = attack.strip()
 				print attack
 				attack = re.split(r'[|d+]',attack)
 				atkName = attack[0]
