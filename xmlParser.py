@@ -4,13 +4,13 @@ import mysql.connector
 def insert_monster(name, hp, ac):
 	
 	#print name, ac, hp
-	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d);" % (name, ac, hp)
+	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d);"
 	
 	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
 	
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute(query)
+	cursor.execute(query, (name, ac, hp))
 	conn.commit()
 	
 	print "added ", name, " to database"
