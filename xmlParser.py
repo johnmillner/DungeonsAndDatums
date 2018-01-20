@@ -88,7 +88,7 @@ def main():
 				atkNumOfDice = int(attack[2])
 				atkSizeOfDice = int(attack[3])
 				atkModifier = int(attack[4])
-				insert_attack(name, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
+				insert_attacks(name, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
 				
 				
 	
