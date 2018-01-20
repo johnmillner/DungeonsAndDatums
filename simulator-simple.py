@@ -38,9 +38,6 @@ def simulate_manyMonsters ( team1, team2 ):
 	for monster in team2:
 		monster.team = 2
 		
-	print team1[0].team
-	print team2[0].team
-		
 	#assign initiative for each member
 	for monster in team1 + team2:
 		monster.initiative = random.random()
@@ -88,8 +85,8 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw1 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
-	raw2 = ['Aboleth']
+	raw2 = ['Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra', 'Aarakocra']
+	raw1 = ['Aboleth']
 
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
