@@ -59,7 +59,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		catcherIndex = random.randint( 0, len( defense ) - 1 )
 		catcher = defense[ catcherIndex ]
 		
-		print attacker.name, " is fighting ", catcher.name, "!"
+		print attacker.name, " on team ", attacker.team, "is fighting ", catcher.name, " of team", catcher.team, "!"
 		#determine hit chance
 		hit = random.randint( 1, 20 )	
 		print "\the rolls a ", hit, " against an ac of", catcher.ac		
@@ -67,7 +67,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		#see if it actually hit
 		if hit >= catcher.ac:
 			catcher.hp = catcher.hp - attacker.maxAttack
-			print "\the hits with ", attacker.maxAttack, ", ", catcher.name, "'s now at ", catcher.hp, " hp"	
+			print "\the deals ", attacker.maxAttack, " damage! ", catcher.name, " is now at ", catcher.hp, " hp"	
 		else:
 			print "\tHE MISSED!"
 				
