@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import random
 import operator
 import mysql.connector 
