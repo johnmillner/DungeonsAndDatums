@@ -100,10 +100,13 @@ def main():
 		
 		# generate string for mySQL
 		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
+		print tmp# SELECT * FROM monsters WHERE name LIKE 'Aarakocra'
 		# grab the monsters file	
 		cursor.execute( tmp )
 		# go fetch it - now we have HP & AC									
-		profile = cursor.fetchone()		
+		junk = cursor.fetchall()		
+		profile = junk[0]
+		
 		print "profile:"
 		print profile
 		# generate string for mySQL to find attacks									
