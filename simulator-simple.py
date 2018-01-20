@@ -20,7 +20,7 @@ class Monster:
 				self.maxAttack = attack.avg
 		
 class Attack:
-	def __init__ ( self, rawAttack )
+	def __init__ ( self, rawAttack ):
 		self.name 		= rawAttack[0]
 		self.noDice 	= rawAttack[1]
 		self.sizeDice 	= rawAttack[2]
