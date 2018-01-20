@@ -47,7 +47,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	while len( team1 ) > 0 and len( team2 ) > 0:
 		#this guy attacks a random guy on the other team
-		attacker = order[ counter % ( len( team) + len( team2 )) ]
+		attacker = order[ counter % ( len( team1 ) + len( team2 )) ]
 		
 		#determine which team the attacker and defender are on
 		if attacker.team is 1:
