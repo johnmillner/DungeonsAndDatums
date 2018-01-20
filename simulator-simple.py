@@ -9,8 +9,8 @@ import MySQLdb
 class Monster:
 	def __init__ ( self, name, hp, ac, attacks ):
 		self.name 		= name
-		self.hp 		= hp
-		self.ac 		= ac
+		self.hp 		= int(hp)
+		self.ac 		= int(ac)
 		self.attacks 	= attacks
 		self.maxAttack 	= 0
 		self.initiative = 0
@@ -23,10 +23,10 @@ class Monster:
 class Attack:
 	def __init__ ( self, rawAttack ):
 		self.name 		= rawAttack[0]
-		self.noDice 	= rawAttack[1]
-		self.sizeDice 	= rawAttack[2]
-		self.modifier 	= rawAttack[3]
-		self.avg 		= rawAttack[4]
+		self.noDice 	= int(rawAttack[1])
+		self.sizeDice 	= int(rawAttack[2])
+		self.modifier 	= int(rawAttack[3])
+		self.avg 		= int(rawAttack[4])
 						
 
 def simulate_manyMonsters ( team1, team2 ):
@@ -103,7 +103,8 @@ def main():
 		cursor.execute( tmp )
 		# go fetch it - now we have HP & AC									
 		profile = cursor.fetchone()		
-		
+		print "profile:"
+		print profile
 		# generate string for mySQL to find attacks									
 		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
 		# find the attack files
