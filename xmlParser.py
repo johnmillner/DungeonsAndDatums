@@ -83,16 +83,19 @@ def main():
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
 				
-				attack = attack.replace(" ", "")
-				print attack
-				
+				negative = False
 				attack = attack.split('|')
 				atkNumOfDice = attack[2].split('d')
-				atkSizeOfDice = atkNumOfDice[1].split('+')
+				atkSizeOfDice = atkNumOfDice[1]
+				if '-' in atkSizeOfDice:
+					atkSizeOfDice = atkNumOfDice[1].split('-')
+					negative = True
+				else:
+					atkSizeOfDice = atkNumOfDice[1].split('+')
 
 				atkName = attack[0]
 
-
+				print attack
 				if attack[1] is '':
 					atkAvgDmg = -1
 				else:
@@ -101,7 +104,12 @@ def main():
 				if len(atkSizeOfDice) is 1:
 					atkModifier = 0
 				else:
-					atkModifier = int(atkSizeOfDice[1])
+					if negative is True:
+						atkModifier = int(atkSizeOfDice[1])
+						atkModifier = -atkModifier
+					else:
+						atkModifier = int(atkSizeOfDice[1])
+
 				atkSizeOfDice = int(atkSizeOfDice[0])
 				atkNumOfDice = int(atkNumOfDice[0])
 				
