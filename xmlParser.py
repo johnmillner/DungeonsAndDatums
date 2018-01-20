@@ -12,10 +12,13 @@ def insert_monster(name, hp, ac):
 	
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute(query)
-	conn.commit()
+	cursor.execute("SELECT * from attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(name)))
 	
-	print "added ", name, " to database"
+	fore = cursor.fetchall()
+	if len(fore) is 0 :
+		cursor.execute(query)
+		conn.commit()
+		print "added ", name, " to database"
 	conn.close()
 		
 def insert_monster_attacks(name, attack):
@@ -24,8 +27,12 @@ def insert_monster_attacks(name, attack):
 
 	cursor = conn.cursor()
 	cursor.execute("use dungeonsAndData;")
-	cursor.execute(query)
-	conn.commit()
+	cursor.execute("SELECT * from attacks WHERE name LIKE '%s'" % (MySQLdb.escape_string(name)))
+	
+	fore = cursor.fetchall()
+	if len(fore) is 0 :
+		cursor.execute(query)
+		conn.commit()
 	conn.close()
 	
 		
