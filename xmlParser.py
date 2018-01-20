@@ -1,8 +1,10 @@
 import xml.etree.ElementTree as ET
 import mysql.connector 
 import mySQLdb
+import re
+
 def insert_monster(name, hp, ac):
-	name.
+	
 	#print name, ac, hp
 	query = "INSERT INTO monsters(name, hp, ac) VALUES('%s',%d,%d);" % (MySQLdb.escape_string(name), ac, hp)
 	
@@ -18,7 +20,7 @@ def insert_monster(name, hp, ac):
 		
 		
 def insert_monster_attacks(name, attack):
-	query = "INSERT INTO monseter_attacks(title,isbn) " \
+	query = "INSERT INTO monseter_attacks(,) " \
             "VALUES(%s,%d, %d)"
 	args = (name, ac, hp)
 	
@@ -42,6 +44,20 @@ def insert_monster_attacks(name, attack):
 		cursor.close()
 		conn.close()
 		
+		
+def insert_attacks(name, numOfDice, sizeOfDice, modifier, avgDmg):
+	#print name, ac, hp
+	query = "INSERT INTO attacks(name, numOfDice, sizeOfDice, modifier, avgDmg) VALUES('%s',%d,%d, %d, %d);" % (MySQLdb.escape_string(name), numOfDice, sizeOfDice, modifier, avgDmg)
+	
+	conn = mysql.connector.connect(host = 'localhost', database = 'dungeonsAndData', user = 'root', password = 'Littlefoot')
+	
+	cursor = conn.cursor()
+	cursor.execute("use dungeonsAndData;")
+	cursor.execute(query)
+	conn.commit()
+	
+	print "added ", name, " to database"
+	conn.close()
 def main():
 	#insert_monster('Aboleth', 135, 17)
 	
@@ -66,6 +82,9 @@ def main():
 		for action in monster.findall('action'):
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
+				attack = re.split(r'[|d+]',attack)
+				
+				
 	
 
 if __name__ == '__main__':
