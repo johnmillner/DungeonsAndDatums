@@ -28,25 +28,6 @@ class Attack:
 		self.modifier 	= rawAttack[3]
 		self.avg 		= rawAttack[4]
 						
-def simlulate_1v1( monsters ) :
-	counter = 0
-	# roll for initiative - 50%
-	if random.random() > .5:
-		counter = 1
-		
-	while monster1.hp > 0 and monster2.hp > 0:
-		hit = random.randint(1, 20)
-		if hit > monsters[ counter % 2 + 1 ].ac:
-			monsters[ counter % 2 + 1 ].hp = monsters[ counter % 2 + 1 ].hp - monsters[ counter % 2 ].maxAttack
-			
-		counter = counter + 1	
-		
-	if  monster1.hp > 0 :
-		victor = monster1
-	else:
-		victor = monster2
-	print "Victor is ", victor.name, " with a health of ", victor.hp," and completed in ", counter, " turns!"
-	
 
 def simulate_manyMonsters ( team1, team2 ):
 	counter = 0
@@ -107,7 +88,6 @@ def main():
 	
 	team1 = list()
 	team2 = list()
-	
 	#find the monsters
 	for monster in raw1:
 		# find the monster AC and HP in monsters
@@ -135,9 +115,9 @@ def main():
 		attacks = list()
 		for attack in rawAttacks:
 			# generate string for mySQL to derive attacks
-			tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack[1] +"'"	
+			tmp = "SELECT * FROM attacks WHERE name LIKE '"+ attack[1] +"'"	
 			# grab the attack file	
-			cursor.execute( MySQLdb.escape_string(tmp) )
+			cursor.execute( tmp )
 			# go fetch it - now we have the full attack profile								
 			move = cursor.fetchone()	
 			attacks.append( Attack( move ) ) 
@@ -171,9 +151,9 @@ def main():
 			attacks = list()
 			for attack in rawAttacks:
 				# generate string for mySQL to derive attacks
-				tmp = "SELECT * FROM monster_attacks WHERE name LIKE '"+ attack[1] +"'"	
+				tmp = "SELECT * FROM attacks WHERE name LIKE '"+ attack[1] +"'"	
 				# grab the attack file	
-				cursor.execute( MySQLdb.escape_string(tmp) )
+				cursor.execute( tmp )
 				# go fetch it - now we have the full attack profile								
 				move = cursor.fetchone()	
 				attacks.append( Attack( move ) ) 
