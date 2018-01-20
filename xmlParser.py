@@ -83,7 +83,7 @@ def main():
 			if action.find('attack') is not None:
 				attack = action.find('attack').text
 				
-				attack = attack.strip()
+				attack = attack.replace(" ", "")
 				print attack
 				attack = re.split(r'[|d+]',attack)
 				atkName = attack[0]
@@ -91,7 +91,7 @@ def main():
 				atkNumOfDice = int(attack[2])
 				atkSizeOfDice = int(attack[3])
 				atkModifier = int(attack[4])
-				insert_attacks(name, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
+				insert_attacks(atkName, atkNumOfDice, atkSizeOfDice, atkModifier, atkAvgDmg)
 				
 				
 	
