@@ -182,7 +182,7 @@ def main():
 		yAxis.append( y )
 		
 	plt.plot( xAxis, yAsix, 'ro')
-	plt.axis([0, max(xAxis), -1, 1) 
+	plt.axis([0, max(xAxis), -1, 1]) 
 	plt.show()
 		
 	
