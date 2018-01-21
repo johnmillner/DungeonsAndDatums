@@ -181,7 +181,9 @@ def main():
 		tmp = simulate_manyMonsters( team1, team2 )
 		xAxis.append( int(tmp[0]) - 1.5 )
 		yAxis.append( int(tmp[1]) )
-		
+	
+	print xAxis
+	print yAxis	
 	plt.plot( yAxis, xAxis, 'ro')
 	plt.axis([0, max(yAxis), -1, 1]) 
 	plt.show()
