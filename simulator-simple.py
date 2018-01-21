@@ -132,7 +132,7 @@ def main():
 			# go fetch it - now we have the full attack profile								
 			move = cursor.fetchone()	
 			attacks.append( Attack( move ) ) 
-		m = Monster( profile[0], profile[1], profile[2], attacks)
+		m = Monster( profile[0], profile[2], profile[1], attacks)
 		team1.append( m )
 		
 		#find the monsters
