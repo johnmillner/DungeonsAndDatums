@@ -204,7 +204,7 @@ def main():
 	print xAxis
 	print yAxis	
 	plt.plot( xAxis, yAxis)
-	plt.axis([0, max(xAxis), -1, 1]) 
+	plt.axis([0, max(xAxis), min(yAxis), max(yAxis)]) 
 	plt.show()
 		
 	
