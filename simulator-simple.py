@@ -73,7 +73,7 @@ def simulate_manyMonsters ( team1, team2 ):
 				
 		#determine if catcher died
 		if catcher.hp <= 0:
-			print catcher.name, "\tdied!"
+			print "\t", catcher.name, " died!"
 			defense.remove( catcher )
 			
 		counter = counter + 1 
@@ -87,8 +87,8 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw1 = ['Aarakocra', 'Aarakocra']
-	raw2 = ['Aarakocra', 'Aarakocra']
+	raw1 = ['Deva']
+	raw2 = ['Aboleth']
 
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
