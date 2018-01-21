@@ -177,10 +177,10 @@ def main():
 	
 	xAxis = list()
 	yAxis = list()
-	for x in range( 0, 100):
+	for i in range( 0, 100):
 		x, y = simulate_manyMonsters( team1, team2 )
-		xAxis.append( x - 1.5 )
-		yAxis.append( y )
+		xAxis.append( int(x) - 1.5 )
+		yAxis.append( int(y) )
 		
 	plt.plot( xAxis, yAxis, 'ro')
 	plt.axis([0, max(xAxis), -1, 1]) 
