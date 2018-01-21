@@ -187,13 +187,13 @@ def main():
 		t1 = copy.deepcopy(team1)
 		t2 = copy.deepcopy(team2)
 		tmp = simulate_manyMonsters( t1, t2 )
-		yAxis.append( int(tmp[0]) - 1 )
+		yAxis.append( int(tmp[0]) - 1.5 )
 		xAxis.append( int(tmp[1]) )
 	
 	print xAxis
 	print yAxis	
 	plt.plot( xAxis, yAxis, 'ro')
-	plt.axis([0, max(xAxis), 0, 1]) 
+	plt.axis([0, max(xAxis), -1, 1]) 
 	plt.show()
 		
 	
