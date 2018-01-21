@@ -181,8 +181,11 @@ def main():
 	
 	xAxis = list()
 	yAxis = list()
+	
 	for i in range( 0, 100):
-		tmp = simulate_manyMonsters( team1, team2 )
+		t1 = copy.deepcopy(team1)
+		t2 = copy.deepcopy(team2)
+		tmp = simulate_manyMonsters( t1, t2 )
 		yAxis.append( int(tmp[0]) - 1 )
 		xAxis.append( int(tmp[1]) )
 	
