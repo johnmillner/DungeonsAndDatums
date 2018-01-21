@@ -8,6 +8,8 @@ import MySQLdb
 import matplotlib.pyplot as plt
 import copy
 
+import numpy as np
+import matplotlib.mlab as mlab
 
 class Monster:
 	def __init__ ( self, name, hp, ac, attacks ):
@@ -188,25 +190,27 @@ def main():
 		team2.append( m )
 		
 	
-	xAxis = list() # holds total summed health of team ( team1 +, team2 -)
-	yAxis = list() # holds how many turns it took for the team to win
+	healths = list() # holds total summed health of team ( team1 +, team2 -)
 	
-	for i in range( 0, 100):
+	size = 1000
+	
+	for i in range( 0, size - 1):
 		t1 = copy.deepcopy(team1)
 		t2 = copy.deepcopy(team2)
 		tmp = simulate_manyMonsters( t1, t2 )
-		
-				
-		
-		yAxis.append( int(tmp[0]) )
-		xAxis.append( int(tmp[1]) )
+		healths.append( int(tmp[0]) )
 		
 	
-	print xAxis
-	print yAxis	
-	plt.plot( xAxis, yAxis,'ro')
-	plt.axis([0, max(xAxis), min(yAxis), max(yAxis)]) 
+
+	# the histogram of the data
+	n, bins, patches = plt.hist(healths, max( healths ), normed=1, facecolor='green', alpha=0.75)
+
+	plt.xlabel('healths')
+	plt.ylabel('Probability')
+	plt.axis([0, max( healths ), 0, 1.0])
+
 	plt.show()
+
 		
 	
 			
