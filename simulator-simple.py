@@ -69,7 +69,7 @@ def simulate_manyMonsters ( team1, team2 ):
 		if hit >= catcher.ac:
 			catcher.hp = catcher.hp - attacker.maxAttack
 			#print "\the deals ", attacker.maxAttack, " damage! ", catcher.name, " is now at ", catcher.hp, " hp"	
-		else:
+		#else:
 			#print "\tHE MISSED!"
 				
 		#determine if catcher died
