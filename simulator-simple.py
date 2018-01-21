@@ -60,21 +60,21 @@ def simulate_manyMonsters ( team1, team2 ):
 		catcherIndex = random.randint( 0, len( defense ) - 1 )
 		catcher = defense[ catcherIndex ]
 		
-		print attacker.name, " on team ", attacker.team, "is fighting ", catcher.name, " of team", catcher.team, "!"
+		#print attacker.name, " on team ", attacker.team, "is fighting ", catcher.name, " of team", catcher.team, "!"
 		#determine hit chance
 		hit = random.randint( 1, 20 )	
-		print "\the rolls a ", hit, " against an ac of", catcher.ac		
+		#print "\the rolls a ", hit, " against an ac of", catcher.ac		
 		
 		#see if it actually hit
 		if hit >= catcher.ac:
 			catcher.hp = catcher.hp - attacker.maxAttack
-			print "\the deals ", attacker.maxAttack, " damage! ", catcher.name, " is now at ", catcher.hp, " hp"	
+			#print "\the deals ", attacker.maxAttack, " damage! ", catcher.name, " is now at ", catcher.hp, " hp"	
 		else:
-			print "\tHE MISSED!"
+			#print "\tHE MISSED!"
 				
 		#determine if catcher died
 		if catcher.hp <= 0:
-			print "\t", catcher.name, " died!"
+			#print "\t", catcher.name, " died!"
 			defense.remove( catcher )
 			
 		counter = counter + 1 
@@ -84,7 +84,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	else:
 		victor = 2
 	
-	print "Victor is team ", victor," and completed in ", counter, " turns!"
+	#print "Victor is team ", victor," and completed in ", counter, " turns!"
 	
 	return victor, counter
 	
@@ -182,7 +182,7 @@ def main():
 		xAxis.append( x - 1.5 )
 		yAxis.append( y )
 		
-	plt.plot( xAxis, yAsix, 'ro')
+	plt.plot( xAxis, yAxis, 'ro')
 	plt.axis([0, max(xAxis), -1, 1]) 
 	plt.show()
 		
