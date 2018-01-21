@@ -187,6 +187,7 @@ def main():
 		t1 = copy.deepcopy(team1)
 		t2 = copy.deepcopy(team2)
 		tmp = simulate_manyMonsters( t1, t2 )
+		print tmp
 		yAxis.append( int(tmp[0]) - 1.5 )
 		xAxis.append( int(tmp[1]) )
 	
