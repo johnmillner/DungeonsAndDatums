@@ -182,8 +182,8 @@ def main():
 		xAxis.append( int(x) - 1.5 )
 		yAxis.append( int(y) )
 		
-	plt.plot( xAxis, yAxis, 'ro')
-	plt.axis([0, max(xAxis), -1, 1]) 
+	plt.plot( yAxis, xAxis, 'ro')
+	plt.axis([0, max(yAxis), -1, 1]) 
 	plt.show()
 		
 	
