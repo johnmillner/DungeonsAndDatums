@@ -91,9 +91,12 @@ def simulate_manyMonsters ( team1, team2 ):
 	#print "Victor is team ", victor," and completed in ", counter, " turns!"
 	##
 	tmp = list()
-	tmp.append( victor )
+	if victor is 1:
+		tmp.append( sum(monster.hp for monster in team1) )
+	else:
+		tmp.append( -sum(monster.hp for monster in team2) )
 	tmp.append( counter )
-	tmp.append( 
+
 	
 	return tmp
 	
@@ -147,61 +150,62 @@ def main():
 		m = Monster( profile[0], profile[2], profile[1], attacks)
 		team1.append( m )
 		
-		#find the monsters
-		for monster in raw2:
-			# find the monster AC and HP in monsters
-			# find the monsters attacks in monster_attacks
-			# find the attack properties in attacks
-			#	piece together a list of valid list of attacks
-			# piece together a valid moster
-			# add monster to list	
-		
-			# generate string for mySQL
-			tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
-			# grab the monsters file	
+	#find the monsters
+	for monster in raw2:
+		# find the monster AC and HP in monsters
+		# find the monsters attacks in monster_attacks
+		# find the attack properties in attacks
+		#	piece together a list of valid list of attacks
+		# piece together a valid moster
+		# add monster to list	
+	
+		# generate string for mySQL
+		tmp = "SELECT * FROM monsters WHERE name LIKE '"+ monster +"'"		
+		# grab the monsters file	
+		cursor.execute( tmp )
+		# go fetch it - now we have HP & AC									
+		profile = cursor.fetchone()		
+	
+		# generate string for mySQL to find attacks									
+		tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
+		# find the attack files
+		cursor.execute( tmp )
+		# go fetch ALL of them
+		rawAttacks = cursor.fetchall()
+	
+		# create list for attacks to fall into
+		attacks = list()
+		for attack in rawAttacks:
+			# generate string for mySQL to derive attacks
+			tmp = "SELECT * FROM attacks WHERE name LIKE '"+ attack[1] +"'"	
+			# grab the attack file	
 			cursor.execute( tmp )
-			# go fetch it - now we have HP & AC									
-			profile = cursor.fetchone()		
-		
-			# generate string for mySQL to find attacks									
-			tmp = "SELECT * FROM monster_attacks WHERE monster LIKE '"+ monster +"'"	
-			# find the attack files
-			cursor.execute( tmp )
-			# go fetch ALL of them
-			rawAttacks = cursor.fetchall()
-		
-			# create list for attacks to fall into
-			attacks = list()
-			for attack in rawAttacks:
-				# generate string for mySQL to derive attacks
-				tmp = "SELECT * FROM attacks WHERE name LIKE '"+ attack[1] +"'"	
-				# grab the attack file	
-				cursor.execute( tmp )
-				# go fetch it - now we have the full attack profile								
-				move = cursor.fetchone()	
-				attacks.append( Attack( move ) ) 
-			m = Monster( profile[0], profile[2], profile[1], attacks)
-			team2.append( m )
+			# go fetch it - now we have the full attack profile								
+			move = cursor.fetchone()	
+			attacks.append( Attack( move ) ) 
+		m = Monster( profile[0], profile[2], profile[1], attacks)
+		team2.append( m )
 		
 	
-	xAxis = list() # holds which team won the encounter
-	yAxis = list() # holds 
+	xAxis = list() # holds total summed health of team ( team1 +, team2 -)
+	yAxis = list() # holds how many turns it took for the team to win
 	
 	for i in range( 0, 100):
 		t1 = copy.deepcopy(team1)
 		t2 = copy.deepcopy(team2)
 		tmp = simulate_manyMonsters( t1, t2 )
-		print "tmp: "
-		print tmp
+		
+				
+		
 		yAxis.append( int(tmp[0]) )
 		xAxis.append( int(tmp[1]) )
 		
 	
 	print xAxis
 	print yAxis	
-	#plt.plot( xAxis, yAxis)
-	#plt.axis([0, max(xAxis), -1, 1]) 
-	#plt.show()
+	plt.plot( xAxis, yAxis)
+	plt.axis([0, max(xAxis), -1, 1]) 
+	plt.show()
 		
 	
 			
