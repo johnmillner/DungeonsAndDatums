@@ -88,7 +88,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	tmp = list()
 	tmp.append( victor )
-	tpm.append( counter )
+	tmp.append( counter )
 	
 	return tmp
 	
