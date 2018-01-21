@@ -5,6 +5,7 @@ import sys
 import operator
 import mysql.connector 
 import MySQLdb
+import matplotlib.pyplot as plt
 
 class Monster:
 	def __init__ ( self, name, hp, ac, attacks ):
@@ -79,11 +80,13 @@ def simulate_manyMonsters ( team1, team2 ):
 		counter = counter + 1 
 		
 	if len( team1 ) > 0 :
-		victor = "team 1"
+		victor = 1
 	else:
-		victor = "team 2"
+		victor = 2
 	
-	print "Victor is ", victor," and completed in ", counter, " turns!"
+	print "Victor is team ", victor," and completed in ", counter, " turns!"
+	
+	return victor, counter
 	
 	
 def main():
@@ -171,9 +174,16 @@ def main():
 			m = Monster( profile[0], profile[2], profile[1], attacks)
 			team2.append( m )
 		
-		
 	
-	simulate_manyMonsters( team1, team2 )
+	
+	for x in range( 0, 100):
+		x, y = simulate_manyMonsters( team1, team2 )
+		xAxis.append( x - 1.5 )
+		yAxis.append( y )
+		
+	plt.plot( xAxis, yAsix, 'ro')
+	plt.axis([0, max(xAxis), -1, 1) 
+	plt.show()
 		
 	
 			
