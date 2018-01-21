@@ -87,8 +87,8 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	
 def main():
-	raw2 = ['Deva']
-	raw1 = ['Aboleth']
+	raw2 = ['Ankheg']
+	raw1 = ['Azer']
 
 	
 	#connect to database - yes i know how insecure this is - dont judge :'(
