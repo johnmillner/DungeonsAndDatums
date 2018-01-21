@@ -175,7 +175,8 @@ def main():
 			team2.append( m )
 		
 	
-	
+	xAxis = list()
+	yAxis = list()
 	for x in range( 0, 100):
 		x, y = simulate_manyMonsters( team1, team2 )
 		xAxis.append( x - 1.5 )
