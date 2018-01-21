@@ -6,6 +6,7 @@ import operator
 import mysql.connector 
 import MySQLdb
 import matplotlib.pyplot as plt
+import copy
 
 class Monster:
 	def __init__ ( self, name, hp, ac, attacks ):
