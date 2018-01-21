@@ -86,7 +86,7 @@ def simulate_manyMonsters ( team1, team2 ):
 	
 	#print "Victor is team ", victor," and completed in ", counter, " turns!"
 	
-	return victor, counter
+	return [ victor, counter ]
 	
 	
 def main():
@@ -178,9 +178,9 @@ def main():
 	xAxis = list()
 	yAxis = list()
 	for i in range( 0, 100):
-		x, y = simulate_manyMonsters( team1, team2 )
-		xAxis.append( int(x) - 1.5 )
-		yAxis.append( int(y) )
+		tmp = simulate_manyMonsters( team1, team2 )
+		xAxis.append( int(tmp[0]) - 1.5 )
+		yAxis.append( int(tmp[1]) )
 		
 	plt.plot( yAxis, xAxis, 'ro')
 	plt.axis([0, max(yAxis), -1, 1]) 
