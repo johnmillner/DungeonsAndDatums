@@ -34,6 +34,8 @@ class Attack:
 def simulate_manyMonsters ( team1, team2 ):
 	counter = 0
 	
+	healthRemaining = 0
+	
 	#assign team numbers
 	for monster in team1:
 		monster.team = 1	
@@ -82,14 +84,16 @@ def simulate_manyMonsters ( team1, team2 ):
 		
 	if len( team1 ) > 0 :
 		victor = 1
+		#add support for health remaining
 	else:
 		victor = 2
 	
 	#print "Victor is team ", victor," and completed in ", counter, " turns!"
-	
+	##
 	tmp = list()
 	tmp.append( victor )
 	tmp.append( counter )
+	tmp.append( 
 	
 	return tmp
 	
@@ -180,8 +184,8 @@ def main():
 			team2.append( m )
 		
 	
-	xAxis = list()
-	yAxis = list()
+	xAxis = list() # holds which team won the encounter
+	yAxis = list() # holds 
 	
 	for i in range( 0, 100):
 		t1 = copy.deepcopy(team1)
@@ -189,12 +193,13 @@ def main():
 		tmp = simulate_manyMonsters( t1, t2 )
 		print "tmp: "
 		print tmp
-		yAxis.append( int(tmp[0]) - 1.5 )
+		yAxis.append( int(tmp[0]) )
 		xAxis.append( int(tmp[1]) )
+		
 	
 	print xAxis
 	print yAxis	
-	plt.plot( xAxis, yAxis)
+	#plt.plot( xAxis, yAxis)
 	#plt.axis([0, max(xAxis), -1, 1]) 
 	#plt.show()
 		
