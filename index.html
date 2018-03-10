@@ -12,29 +12,16 @@
 
         <meta />
 
-        <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
-        <script type="text/javascript" src="script/login.js"></script>
-        <script type="text/javascript" src="script/addUser.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script type="text/javascript" src="script/splash.js"></script>
 
     </head>
 
     <body>
-
-        <div id="login">
-            <input type="email" placeholder="email" id="email"/>
-            <input type="password" placeholder="password" id="password"/>
-            <button onclick="login()">Login</button>
-            <p id = "output"></p>
-        </div>
-
-        <div id="submit">
-            <input type="email" placeholder="email" id="semail"/>
-            <input type="text" placeholder="name" id="name"/>
-            <input type="tel" placeholder="phone" id="phone"/>
-            <input type="password" placeholder="password" id="spassword"/>
-            <button onclick="addUser()">Login</button>
-            <p id = "soutput"></p>
+        <div id = "test">
+            <input v-model="message" placeholder="username">
+            <button v-on:click="submit">Submit</button>
         </div>
     </body>
 </html>
