@@ -1,0 +1,544 @@
+<resources>
+    <string name="app_name">Dungeonsanddatums</string>
+    <string name="title_activity_character_sheet">character_sheet</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_create_character">CreateCharacter</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string-array name="myDefault">
+        <item>Please Select an Item</item>
+    </string-array>
+
+    <!-- Race and subrace lists: -->
+    <string-array name="race_list">
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Halfling</item>
+        <item>Human</item>
+        <item>Dragonborn</item>
+        <item>Gnome</item>
+        <item>Half-Elf</item>
+        <item>Half-Orc</item>
+        <item>Tiefling</item>
+    </string-array>
+
+    <string-array name="dwarf_subraces">
+        <item>Hill Dwarf</item>
+        <item>Mountain Dwarf</item>
+    </string-array>
+
+    <string-array name="elf_subraces">
+        <item>High Elf</item>
+        <item>Wood Elf</item>
+        <item>Dark Elf (Drow)</item>
+    </string-array>
+
+    <string-array name="halfling_subraces">
+        <item>Lightfoot</item>
+        <item>Stout</item>
+    </string-array>
+
+    <string-array name="human_subraces">
+        <item>Classic</item>
+        <item>Variant</item>
+    </string-array>
+
+    <string-array name="dragonborn_subraces">
+        <item>Black</item>
+        <item>Blue</item>
+        <item>Brass</item>
+        <item>Bronze</item>
+        <item>Copper</item>
+        <item>Gold</item>
+        <item>Green</item>
+        <item>Red</item>
+        <item>Silver</item>
+        <item>White</item>
+    </string-array>
+
+    <string-array name="gnome_subraces">
+        <item>Forest Gnome</item>
+        <item>Rock Gnome</item>
+    </string-array>
+
+    <!-- Half-Elf, Half-Orc, and Tiefling have no subraces or variants -->
+
+    <!-- Race Descriptions -->
+    <string name="race_description_human">
+        \nAbility Score Increase: your ability scores each increase by 1
+        \nAge: Humans reach adulthood in their late teens and live less than a century
+        \nAlignment: Humans tend toward no particular alignment. The best and worst are found amongst them
+        \nSize: Humans vary widely in height and build, from barely 5 feet to well over 6 feet tall. Regardless of your position in that range, your size is medium
+        \nSpeed: Your base walking speed is 30
+        \nLanguages: You can speak, read, and write Common and one extra language of your choice. Humans typically learn the languages of other peoples they deal with, including obsucre dialects. They are fond of sprinkling their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, Dwarvish military phrases, and so on.
+    </string>
+
+    <!-- Human Race info -->
+    <string name="human_abilityScoreIncrease">
+        All abilities +1
+    </string>
+    <string name="human_size">
+        Medium: 5 to 6 feet tall
+    </string>
+    <string name="human_age">
+        Adulthood: 15 years\n
+        Max lifespan: 100 years
+    </string>
+    <string name="human_speed">
+        30 feet
+    </string>
+    <string name="human_languages">
+        Common + 1 language of choice
+    </string>
+
+    <string name="race_description_dwarf">
+        Ability Score Increase: Your Constitution score increases by 2
+        \nAge: Dwarves matures at the same rate as humans, but they\'re considered young until they reach the age of 50. On average, they live about 350 years.
+        \nAlignment: Most dwarves are lawful, believing firmly in the benefits of a well-ordered society. They tend toward good as well, with a strong sense of fair play and a belief that everyone deserves to share in the benefits of a just order
+        \nSize: Dwarfs stand between 4 and 5 feet tall and average about 150 pounds. Your size is Medium
+        \nSpeed: Your base walking speed is 25 feet. Your speed is not reduced by wearing heavy armor
+        \nDarkvision:
+        \nDwarven Resilience:
+        \nDwarven Combat Training:
+    </string>
+
+    <!-- Trait Descriptions for races -->
+    <string-array name="dwarfTraits">
+        <item>Constitution +2</item>
+        <item>Reach maturity at 50, max life: ~350 years</item>
+        <item>Medium: 4 to 5 feet tall, average 150 lbs</item>
+        <item>25 feet, not reduced by heavy armor</item>
+    </string-array>
+
+    <string-array name="elfTraits">
+        <item>Dexterity +2</item>
+        <item>Age: 100 (Adulthood) -> 750 years</item>
+        <item>Height: Medium: 5 to 6 feet tall, slender builds</item>
+        <item>Speed: 30</item>
+        <item>Darkvision</item>
+        <item>Proficiency in perception</item>
+        <item>Don't need to sleep, instead Elves meditate for 4 hours daily</item>
+        <item>Languages: Common and Elvish</item>
+    </string-array>
+
+    <string-array name="halflingTraits">
+        <item>Dexterity +2</item>
+        <item>Age: 20 (Adulthood) -> 150 to 200 years</item>
+        <item>Height: Small: about 3 feet tall, about 40 punds</item>
+        <item>Speed: 25</item>
+        <item>Lucky: When you roll a 1 on the d20 for an Attack roll, ability check, or saving throw, you can reroll the die and must use the new roll</item>
+        <item>Brave: You have advantage on saving throws against being Frightened</item>
+        <item>Halfling Nimbleness: You can move through the space of any creature that is of a size larger than yours.</item>
+        <item>Languages: Common and Halfling</item>
+    </string-array>
+
+    <string-array name="humanTraits">
+        <item>Your Ability Scores each increase by 1.</item>
+        <item>Age: 20 (Adulthood) -> less than 100 years</item>
+        <item>Height: Medium: about 5 to 6 feet tall</item>
+        <item>Speed: 30</item>
+        <item>Languages: Common and one of your choice</item>
+    </string-array>
+
+    <string-array name="dragonbornTraits">
+        <item>Strength +2, Charisma +1</item>
+        <item>Age: 15 (Adulthood) -> 80 years</item>
+        <item>Height: Medium: over 6 feet tall, averaging 250 punds</item>
+        <item>Speed: 30</item>
+        <item>Draconic Ancestry: You have draconic ancestry. Choose one type of dragon from the Draconic Ancestry table. Your breath weapon and damage Resistance are determined by the dragon type, as shown in the table.</item>
+        <item>Breath Weapon: You can use your action to exhale destructive energy. Your draconic ancestry determines the size, shape, and damage type of the exhalation.</item>
+        <item>Damage Resistance: You have Resistance to the damage type associated with your draconic ancestry.</item>
+        <item>Languages: Common and Draconic</item>
+    </string-array>
+
+    <string-array name="gnomeTraits">
+        <item>Intelligence +2</item>
+        <item>Age: 18 (Adulthood) -> 350 to 500</item>
+        <item>Height: Small: 3 to 4 feet tall, about 40 pounds</item>
+        <item>Speed: 25</item>
+        <item>Darkvision</item>
+        <item>Gnome Cunning: You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.</item>
+        <item>Languages: Common and one of your choice</item>
+    </string-array>
+
+    <string-array name="halfElfTraits">
+        <item>Charisma +2, two other ability scores of your choice increase by 1</item>
+        <item>Age: 20 (Adulthood) -> 180+ years</item>
+        <item>Height: Medium: 5 to 6 feet tall</item>
+        <item>Speed: 30</item>
+        <item>Darkvision</item>
+        <item>Fey Ancestry: You have advantage on saving throws against being Charmed, and magic can’t put you to sleep.</item>
+        <item>Skill Versatility: You gain proficiency in two skills of your choice.</item>
+        <item>Languages: Common, Elvish, and one Language of choice</item>
+    </string-array>
+
+    <string-array name="halfOrcTraits">
+        <item>Strength +2, Constitution +1</item>
+        <item>Age: 14 (Adulthood) -> less than 75 years</item>
+        <item>Height: Medium: 5 to 6 feet tall</item>
+        <item>Speed: 30</item>
+        <item>Darkvision</item>
+        <item>Menacing: You gain proficiency in the Intimidation skill.</item>
+        <item>Relentless Endurance: When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can’t use this feature again until you finish a Long Rest.</item>
+        <item>Savage Attacks: When you score a critical hit with a melee weapon Attack, you can roll one of the weapon’s damage dice one additional time and add it to the extra damage of the critical hit.</item>
+        <item>Languages: Common and Orc</item>
+    </string-array>
+
+    <string-array name="tieflingTraits">
+        <item>Intelligence +1, Charisma +2</item>
+        <item>Age: 18 (Adulthood) -> 100 years</item>
+        <item>Height: Medium: 5 to 6 feet tall</item>
+        <item>Speed: 30</item>
+        <item>Darkvision</item>
+        <item>Hellish Resistance: You have Resistance to fire damage.</item>
+        <item>Infernal Legacy: you know the Thaumaturgy cantrip, and learn Hellish Rebuke (2nd level) at 3rd level, and Darkness (5th level) at 4th level</item>
+        <item>Languages: Common and Infernal</item>
+    </string-array>
+
+
+    <!-- Classes and Subclasses -->
+    <string-array name="classes">
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
+
+    <!-- Subclasses -->
+    <string-array name="Barbarian_Subclasses">
+        <item>Path of the Berserker</item>
+        <item>Path of the Totem Warrior</item>
+    </string-array>
+
+    <string-array name="Bard_Subclasses">
+        <item>College of Lore</item>
+        <item>College of Valor</item>
+    </string-array>
+
+    <string-array name="Cleric_Subclasses">
+        <item>Knowledge Domain</item>
+        <item>Life Domain</item>
+        <item>Light Domain</item>
+        <item>Nature Domain</item>
+        <item>Tempest Domain</item>
+        <item>Trickery Domain</item>
+        <item>War Domain</item>
+    </string-array>
+
+    <string-array name="Druid_Subclasses">
+        <item>Circle of the Land</item>
+        <item>Circle of the Moon</item>
+    </string-array>
+
+    <string-array name="Fighter_Subclasses">
+        <item>Champion</item>
+        <item>Battle Master</item>
+        <item>Eldritch Knight</item>
+    </string-array>
+
+    <string-array name="Monk_Subclasses">
+        <item>Way of the Open Hand</item>
+        <item>Way of Shadow</item>
+        <item>Way of the Four Elements</item>
+    </string-array>
+
+    <string-array name="Paladin_Subclasses">
+        <item>Oath of Devotion</item>
+        <item>Oath of the Ancients</item>
+        <item>Oath of Vengence</item>
+    </string-array>
+
+    <string-array name="Ranger_Subclasses">
+        <item>Hunter</item>
+        <item>Beast Master</item>
+    </string-array>
+
+    <string-array name="Rogue_Subclasses">
+        <item>Thief</item>
+        <item>Assassin</item>
+        <item>Arcane Trickster</item>
+    </string-array>
+
+    <string-array name="Sorcerer_Subclasses">
+        <item>Draconic Bloodline</item>
+        <item>Wild Magic</item>
+    </string-array>
+
+    <string-array name="Warlock_Subclasses">
+        <item>The Archfey</item>
+        <item>The Fiend</item>
+        <item>The Greate Old One</item>
+    </string-array>
+
+    <string-array name="Wizard_Subclasses">
+        <item>School of Abjuration</item>
+        <item>School of Conjuration</item>
+        <item>School of Enchantment</item>
+        <item>School of Evocation</item>
+        <item>School of Illusion</item>
+        <item>School of Necromancy</item>
+        <item>School of Transmutation</item>
+    </string-array>
+
+    <string-array name="BarbarianFeatures">
+        <item>Hit Points:</item>
+        <item>Proficiencies:</item>
+        <item>Saving Throws</item>
+        <item>Skill Proficiencies</item>
+        <item>Equipment</item>
+        <item>Rage</item>
+        <item>Unarmored Defense</item>
+        <item>Reckless Attack</item>
+        <item>Danger Sense</item>
+        <item>Primal Path</item>
+        <item>Ability Score Improvement</item>
+        <item>Extra Attack</item>
+        <item>Fast Movement</item>
+        <item>Feral Instinct</item>
+        <item>Brutal Critical (1 die)</item>
+        <item>Relentless Rage</item>
+        <item>Brutal Critical (2 dice)</item>
+        <item>Persistent Rage</item>
+        <item>Brutal Critical (3 dice)</item>
+        <item>Indomitable Might</item>
+        <item>Primal Champion</item>
+        <item>Primal Paths</item>
+    </string-array>
+    <string-array name="DruidFeatures">
+        <item>YAYY</item>
+    </string-array>
+
+    <!-- Background Information -->
+    <string-array name="Background_list">
+        <item>Acolyte</item>
+        <item>Charlatan</item>
+        <item>Criminal</item>
+        <item>Entertainer</item>
+        <item>Folk Hero</item>
+        <item>Guild Artisan</item>
+        <item>Hermit</item>
+        <item>Noble</item>
+        <item>Outlander</item>
+        <item>Sailor</item>
+        <item>Soldier</item>
+        <item>Urchin</item>
+    </string-array>
+
+    <string-array name="Acolyte_description">
+        <item>Skill Proficiencies: Insight, Relition</item>
+        <item>Languages: Two of your choice</item>
+        <item>Equipment</item>
+        <item>Shelter of the Faithful</item>
+        <item>Personality Trait</item>
+        <item>Ideal</item>
+        <item>Bond</item>
+        <item>Flaw</item>
+    </string-array>
+    <string-array name="Charlatan_description">
+        <item>NEED TO FILL OUT</item>
+    </string-array>
+
+    <!-- Stats Information -->
+    <string-array name="stats_list">
+        <item>Point Buy</item>
+        <item>Roll</item>
+        <item>Manual</item>
+    </string-array>
+
+    <string-array name="stats_description">
+        <item>Strength</item>
+        <item>Dexterity</item>
+        <item>Constitution</item>
+        <item>Wisdom</item>
+        <item>Intelligence</item>
+        <item>Charisma</item>
+    </string-array>
+    <string-array name="default_stat_values">
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+        <item>8</item>
+    </string-array>
+    <string name="title_activity_test">Test</string>
+
+    <!-- equipment choices -->
+    <!-- TODO fill out non-choice items -->
+    <!-- TODO figure out how to make 3 options work -->
+    <string-array name="equipment1_Barbarian">
+        <item>Greataxe</item>
+        <item>two handaxes</item>
+    </string-array>
+
+    <string-array name="equipment2_Barbarian">
+        <item>any marital melee weapon</item>
+        <item>any simple weapon</item>
+    </string-array>
+
+    <string-array name="equipment1_Bard">
+        <item>Rapier</item>
+        <item>Diplomat's Pack</item>
+        <item>a Lute</item>
+    </string-array>
+
+    <string-array name="equipment2_Bard">
+        <item>any marital melee weapon</item>
+        <item>any simple weapon</item>
+        <item>any other musical instrument</item>
+    </string-array>
+
+    <string-array name="equipment1_Cleric">
+        <item>a Mace</item>
+        <item>Scale Mail</item>
+        <item>Light Crossbow and 20 bolts</item>
+        <item>a Priest's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Cleric">
+        <item>a Warhammer (if Proficient)</item>
+        <item>Leather Armor</item>
+        <item>any simple weapon</item>
+    </string-array>
+
+    <string-array name="equipment1_Druid">
+        <item>a wooden Shield</item>
+        <item>a Scimitar</item>
+    </string-array>
+
+    <string-array name="equipment2_Druid">
+        <item>any simple weapon</item>
+        <item>any simple melee weapon</item>
+    </string-array>
+
+    <string-array name="equipment1_Fighter">
+        <item>Chain Mail</item>
+        <item>a martial weapon and a shield</item>
+        <item>a Light Crossbow and 20 bolts</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Fighter">
+        <item>leather, Longbow, and 20 Arrows</item>
+        <item>two martial Weapons</item>
+        <item>two handaxes</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Monk">
+        <item>a Shortsword</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Monk">
+        <item>any simple weapon</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Paladin">
+        <item>any marital melee weapon and a shield</item>
+        <item>five javelins</item>
+        <item>a Priest's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Paladin">
+        <item>two martial Weapons</item>
+        <item>any simple melee weapon</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Ranger">
+        <item>Scale Mail</item>
+        <item>two shortswords</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Ranger">
+        <item>Leather Armor</item>
+        <item>two simple Melee Weapons</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Rogue">
+        <item>a Rapier</item>
+        <item>a Shortbow and Quiver of 20 Arrows</item>
+        <item>a Burglar's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Rogue">
+        <item>a Shortsword</item>
+        <item>a Shortsword</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Sorcerer">
+        <item>a Light Crossbow and 20 bolts</item>
+        <item>a component pouch</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Sorcerer">
+        <item>any simple weapon</item>
+        <item>an arcane focus</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Warlock">
+        <item>a Light Crossbow and 20 bolts</item>
+        <item>a Component Pouch</item>
+        <item>a Scholar's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Warlock">
+        <item>any simple weapon</item>
+        <item>an arcane focus</item>
+        <item>a Dungeoneer's Pack</item>
+    </string-array>
+
+    <string-array name="equipment1_Wizard">
+        <item>a Quarterstaff</item>
+        <item>a Component pouch</item>
+        <item>a Scholar's Pack</item>
+    </string-array>
+
+    <string-array name="equipment2_Wizard">
+        <item>a Dagger</item>
+        <item>an arcane focus</item>
+        <item>an Explorer's Pack</item>
+    </string-array>
+
+    <string-array name="dept_array">
+        <item>Vegetable</item>
+        <item>Fruits</item>
+        <item>Grocery</item>
+        <item>Electronics</item>
+        <item>Books</item>
+        <item>Language</item>
+    </string-array>
+
+</resources>

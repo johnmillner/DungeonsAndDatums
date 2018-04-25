@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/sb_home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/sb_characters"
+        android:title="Characters"/>
+    <item
+        android:id="@+id/sb_campaigns"
+        android:title="Campaigns"/>
+    <item
+        android:id="@+id/sb_join"
+        android:title="Join"/>
+    <item
+        android:id="@+id/sb_about"
+        android:title="About"/>
+    <item
+        android:id="@+id/sb_help"
+        android:title="Help"/>
+</group>
+</menu>

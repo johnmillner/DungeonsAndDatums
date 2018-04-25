@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/item_attacks"
+        android:title="attacks"
+        app:showAsAction="withText"/>
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/item_stats"
+        android:title="stats"
+        app:showAsAction="withText"/>
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/item_features"
+        android:title="feature"
+        app:showAsAction="withText"/>
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/item_inventory"
+        android:title="inventory"
+        app:showAsAction="withText"/>
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/item_details"
+        android:title="details"
+        app:showAsAction="withText"/>
+
+</menu>
