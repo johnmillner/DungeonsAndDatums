@@ -1,8 +1,8 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-import { Router } from "/source/router.js";
-import { App } from "/source/components/app.vue";
+import Router from "source/router";
+import App from "/source/components/app";
 
 //launches Vue instance - inserts into blank object called app
 new Vue({
@@ -10,4 +10,4 @@ new Vue({
   Router,
   template: '<App/>'
   components: { App }
-});
+})
