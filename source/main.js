@@ -1,7 +1,7 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-import {Router} from "./router";
+import {Router} from "./router.js";
 // import App from "/source/components/app.vue";
 
 //launches Vue instance - inserts into blank object called app
