@@ -8,6 +8,6 @@ import App from "./components/app.vue";
 export var vm = new Vue({
   el: '#app',
   Router,
-  template: '<App/>'
-  components: App 
+  template: '<App/>',
+  components: { App }
 })
