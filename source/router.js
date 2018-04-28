@@ -1,6 +1,3 @@
-//  Created by:   John Millner
-//  Created for:  Dungeons and Datums
-
 import Header           from '/source/components/header.vue';
 import SplashHeader     from '/source/components/splashHeader.vue';
 import Menu             from '/source/components/menu.vue';
@@ -14,6 +11,9 @@ import createSpell      from 'source/pages/createSpell.vue';
 import Main             from 'source/pages/main.vue';
 import Settings         from 'source/pages/settings.vue';
 import Splash           from 'source/pages/splash.vue';
+
+//  Created by:   John Millner
+//  Created for:  Dungeons and Datums
 
 Vue.use( Router );
 
