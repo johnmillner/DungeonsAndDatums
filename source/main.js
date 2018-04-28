@@ -2,7 +2,7 @@
 //  Created for:  Dungeons and Datums
 
 import Router from "/source/router.js";
-import App from "/source/components/app.vue";
+// import App from "/source/components/app.vue";
 
 //launches Vue instance - inserts into blank object called app
 export var vm = new Vue({
