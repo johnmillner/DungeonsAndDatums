@@ -2,13 +2,12 @@
 //  Created for:  Dungeons and Datums
 
 import {Router} from "./router.js";
-// import App from "/source/components/app.vue";
+import {App} from "./components/app.vue";
 
-//launches Vue instance - inserts into blank object called app
-console.log(Router);
-// export var vm = new Vue({
-//   el: '#app',
-//   Router,
-//   template: '<App/>'
-//   components: { App }
-// })
+// launches Vue instance - inserts into blank object called app
+export var vm = new Vue({
+  el: '#app',
+  Router,
+  template: '<App/>'
+  components: { App }
+})

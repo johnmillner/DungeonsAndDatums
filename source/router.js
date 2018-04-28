@@ -1,35 +1,35 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-// import Header           from '/source/components/header.vue';
-// import SplashHeader     from '/source/components/splashHeader.vue';
-// import Menu             from '/source/components/menu.vue';
-//
-// import Campaign         from '/source/pages/campaign.vue';
-// import Charater         from '/source/pages/character.vue';
-// import CreateCampaign   from '/source/pages/createCampaign.vue';
-// import CreateCharacter  from '/source/pages/createCharacter.vue';
-// import CreateItem       from '/source/pages/createItem.vue';
-// import createSpell      from '/source/pages/createSpell.vue';
-// import Main             from '/source/pages/main.vue';
-// import Settings         from '/source/pages/settings.vue';
-// import Splash           from '/source/pages/splash.vue';
+import Header           from './components/header.vue';
+import SplashHeader     from './components/splashHeader.vue';
+import Menu             from './components/menu.vue';
 
-// Vue.use( Router );
+import Campaign         from './pages/campaign.vue';
+import Charater         from './pages/character.vue';
+import CreateCampaign   from './pages/createCampaign.vue';
+import CreateCharacter  from './pages/createCharacter.vue';
+import CreateItem       from './pages/createItem.vue';
+import createSpell      from './pages/createSpell.vue';
+import Main             from './pages/main.vue';
+import Settings         from './pages/settings.vue';
+import Splash           from './pages/splash.vue';
+
+Vue.use( Router );
 
 const routes =
 [
-  // { path: '/'  component: Splash },
-  // { path: '/Campaign'  component: Campaign },
-  // { path: '/Charater'  component: Charater },
-  // { path: '/CreateCampaign'  component: CreateCampaign },
-  // { path: '/CreateCharacter'  component: CreateCharacter },
-  // { path: '/CreateItem'  component: CreateItem },
-  // { path: '/createSpell'  component: createSpell },
-  // { path: '/Main'  component: Main },
-  // { path: '/Settings'  component: Settings }
+  { path: '/'  component: Splash },
+  { path: '/Campaign'  component: Campaign },
+  { path: '/Charater'  component: Charater },
+  { path: '/CreateCampaign'  component: CreateCampaign },
+  { path: '/CreateCharacter'  component: CreateCharacter },
+  { path: '/CreateItem'  component: CreateItem },
+  { path: '/createSpell'  component: createSpell },
+  { path: '/Main'  component: Main },
+  { path: '/Settings'  component: Settings }
 ];
 
-export const Router = 5;//new VueRouter({
-//   routes
-// });
+export const Router = new VueRouter({
+  routes
+});
