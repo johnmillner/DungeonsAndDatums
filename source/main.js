@@ -5,7 +5,7 @@ import Router from "source/router";
 import App from "/source/components/app";
 
 //launches Vue instance - inserts into blank object called app
-new Vue({
+const var v = new Vue({
   el: '#app',
   Router,
   template: '<App/>'
