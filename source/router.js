@@ -30,6 +30,6 @@ const routes =
   // { path: '/Settings'  component: Settings }
 ];
 
-export default const new VueRouter({
-  routes
-});
+export const Router = 5;//new VueRouter({
+//   routes
+// });
