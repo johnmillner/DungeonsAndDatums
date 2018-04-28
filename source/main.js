@@ -9,5 +9,5 @@ export var vm = new Vue({
   el: '#app',
   Router,
   template: '<App/>'
-  components: { App }
+  components: App 
 })
