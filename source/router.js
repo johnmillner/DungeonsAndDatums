@@ -19,15 +19,15 @@ Vue.use( Router );
 
 const routes =
 [
-  { path: '/',  component: Splash },
-  { path: '/Campaign',  component: Campaign },
-  { path: '/Charater',  component: Charater },
-  { path: '/CreateCampaign',  component: CreateCampaign },
-  { path: '/CreateCharacter',  component: CreateCharacter },
-  { path: '/CreateItem',  component: CreateItem },
-  { path: '/createSpell',  component: createSpell },
-  { path: '/Main',  component: Main },
-  { path: '/Settings', component: Settings }
+  { path: '/',          name: 'Splash', component: Splash },
+  { path: '/Campaign',  name: 'Campaign', component: Campaign },
+  { path: '/Charater',  name: 'Charater', component: Charater },
+  { path: '/CreateCampaign',    name: 'CreateCampaign', component: CreateCampaign },
+  { path: '/CreateCharacter',   name: 'CreateCharacter', component: CreateCharacter },
+  { path: '/CreateItem',    name: 'CreateItem', component: CreateItem },
+  { path: '/createSpell',   name: 'createSpell', component: createSpell },
+  { path: '/Main',      name: 'Main', component: Main },
+  { path: '/Settings',  name: 'Settings', component: Settings }
 ];
 
 export const Router = new VueRouter({
