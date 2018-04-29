@@ -1,8 +1,6 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-Vue.use( router );
-
 const routes =
 [
   {
@@ -46,3 +44,5 @@ const routes =
 export const router = new VueRouter({
   routes
 });
+
+Vue.use( router );
