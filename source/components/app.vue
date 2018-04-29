@@ -11,10 +11,10 @@
 </template>
 
 <script>
-  module.exports = {
-    data: function(){
+  export default = {
+    data() {
       return{
-        greeting: 'hello'
+        test: 'hello'
       }
     }
   }
