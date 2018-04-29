@@ -19,15 +19,42 @@ Vue.use( Router );
 
 const routes =
 [
-  { path: '/'  component: Splash },
-  { path: '/Campaign'  component: Campaign },
-  { path: '/Charater'  component: Charater },
-  { path: '/CreateCampaign'  component: CreateCampaign },
-  { path: '/CreateCharacter'  component: CreateCharacter },
-  { path: '/CreateItem'  component: CreateItem },
-  { path: '/createSpell'  component: createSpell },
-  { path: '/Main'  component: Main },
-  { path: '/Settings'  component: Settings }
+  {
+    path: '/',
+    component: { 'Splash' : httpVueLoader('./pages/splash.vue') }
+  },
+  {
+    path: '/campaign',
+    component: { 'Campaign' : httpVueLoader('./pages/campaign.vue') }
+  },
+  {
+    path: '/charater',
+    component: { 'Charater' : httpVueLoader('./pages/character.vue') }
+  },
+  {
+    path: '/createCampaign',
+    component: { 'CreateCampaign' : httpVueLoader('./pages/createCampaign.vue') }
+  },
+  {
+    path: '/createCharacter',
+    component: { 'CreateCharacter' : httpVueLoader('./pages/createCharacter.vue') }
+  },
+  {
+    path: '/createItem',
+    component: { 'CreateItem' : httpVueLoader('./pages/createItem.vue') }
+  },
+  {
+    path: '/createSpell',
+    component: { 'createSpell' : httpVueLoader('./pages/createSpell.vue') }
+  },
+  {
+    path: '/main',
+    component: { 'Main' : httpVueLoader('./pages/main.vue') }
+  },
+  {
+    path: '/settings', 
+    component: { 'Settings' : httpVueLoader('./pages/settings.vue') }
+  }
 ];
 
 export const Router = new VueRouter({
