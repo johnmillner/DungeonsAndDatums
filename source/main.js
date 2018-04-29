@@ -7,6 +7,6 @@ import { router } from "./router.js";
 export var vm = new Vue({
   el: '#app',
   router,
-  template: '<App/>',
+  template: '#app',
   components: { 'app' : httpVueLoader('./components/app.vue') }
 })
