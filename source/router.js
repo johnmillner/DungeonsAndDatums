@@ -1,7 +1,7 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-Vue.use( Router );
+Vue.use( router );
 
 const routes =
 [
