@@ -1,20 +1,6 @@
 //  Created by:   John Millner
 //  Created for:  Dungeons and Datums
 
-import Header           from './components/header.vue';
-import SplashHeader     from './components/splashHeader.vue';
-import Menu             from './components/menu.vue';
-
-import Campaign         from './pages/campaign.vue';
-import Charater         from './pages/character.vue';
-import CreateCampaign   from './pages/createCampaign.vue';
-import CreateCharacter  from './pages/createCharacter.vue';
-import CreateItem       from './pages/createItem.vue';
-import createSpell      from './pages/createSpell.vue';
-import Main             from './pages/main.vue';
-import Settings         from './pages/settings.vue';
-import Splash           from './pages/splash.vue';
-
 Vue.use( Router );
 
 const routes =
@@ -52,7 +38,7 @@ const routes =
     component: { 'Main' : httpVueLoader('./pages/main.vue') }
   },
   {
-    path: '/settings', 
+    path: '/settings',
     component: { 'Settings' : httpVueLoader('./pages/settings.vue') }
   }
 ];
