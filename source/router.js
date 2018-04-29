@@ -43,6 +43,6 @@ const routes =
   }
 ];
 
-export default = new VueRouter({
+export const router = new VueRouter({
   routes
 });
